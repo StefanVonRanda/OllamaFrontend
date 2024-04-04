@@ -23,12 +23,13 @@ window.onload = () => {
 		data.models.forEach((m) => {
 			const opt = document.createElement('option');
 			opt.value = m.name;
-			opt.innerHTML = m.name;
+			opt.innerHTML = m.name.split(':')[0];
 			models.add(opt);
 		});
 		currentModel = models.options[0].value;
 	});
 
+	input.focus();
 }
 
 models.onchange = (e) => {
