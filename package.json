@@ -1,0 +1,11 @@
+{
+  "name": "llamabun",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun run --watch index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

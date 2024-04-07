@@ -2,7 +2,7 @@
 	font-family: "icon";
 	font-style: normal;
 	font-weight: 100 700;
-	src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v156/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsLjBuVY.woff2) format("woff2");
+	src: url("/icons.woff2") format("woff2");
 }
 .icon {
 	font-family: "icon";
@@ -60,7 +60,7 @@ body {
 }
 
 .responses:empty::after {
-	content: 'Start Bullchatting';
+	content: 'start chatting';
 	position: absolute;
 	inset: 0;
 	display: grid;
