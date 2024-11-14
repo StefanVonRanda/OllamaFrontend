@@ -1,4 +1,16 @@
-# llamabun
+# OllamaFrontend
+A dead simple frontend for Ollama served with `Bun`
+
+![Screenshot](Screenshot.webp)
+
+
+#### Requirements
+
+- Bun
+- Ollama
+- At least 1 local model 
+
+
 
 To install dependencies:
 
@@ -12,4 +24,10 @@ To run:
 bun run start
 ```
 
-This project was created using `bun init` in bun v1.1.0. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+
+#### ToDo
+
+- Handle Streaming data output
+- Format markdown output
+- Make it easy to manage models in GUI
+- Convert this whole thing to a Tauri App IDK
