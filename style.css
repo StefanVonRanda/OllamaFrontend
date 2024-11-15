@@ -32,7 +32,7 @@ html * {
 
 html {
 	color-scheme: light dark;
-	font: 500 clamp(16px, 1vw, 26px) / 1.5 Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+	font: 500 max(16px, 0.75vmax + 0.75vmin) / 1.5 Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -60,14 +60,14 @@ body {
 }
 
 .responses {
-	padding: 1rem;
+	padding-block: 1rem;
 	display: flex;
 	flex-flow: column;
 	gap: 0.5rem;
 	flex-grow: 1;
 	overflow-y: auto;
 	position: relative;
-	width: min(60rem, 100%);
+	width: min(60ch, 95%);
 	margin-inline: auto;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 .response .message {
-	background: #fff2;
+	background: #0002;
 	color: #fff;
 	border: 1px solid var(--color);
 	border-radius: 0.25rem;
@@ -106,6 +106,12 @@ body {
 		max-width: 60ch;
 		margin-bottom: 0.5em;
 	}
+}
+
+
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }
 
 .request .author {
@@ -126,7 +132,7 @@ body {
 	border: 1px solid var(--color);
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
-  background: #0002;
+  background: #fff2;
   width: fit-content;
   color: #eee;
   max-width: 60ch;
@@ -135,7 +141,7 @@ body {
 .user {
 	display: flex;
 	padding-inline: 0 .25rem;
-	width: min(60rem, 100%);
+	width: min(60ch, 95%);
 	margin: 1rem auto;
 	border-radius: 0.5rem;
 	background: var(--cover);
