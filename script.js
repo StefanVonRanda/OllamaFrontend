@@ -1,3 +1,5 @@
+import {parseMd} from './markdown.js';
+
 const input = document.querySelector('input[type="text"]');
 const send = document.querySelector('input[type="submit"]');
 const models = document.querySelector('select');
@@ -56,7 +58,8 @@ send.onclick = () => {
 		return response.json();
 	})
 	.then(data => {
-		document.querySelector('.responses').innerHTML += `<div class="request"><div class="author">user:</div><div class="message">${input.value}</div></div><div class="response"><div class="author">${currentModel.split(':')[0]}:</div><div class="message">${data.message.content}</div></div>`;
+		const markdown = parseMd(data.message.content);
+		document.querySelector('.responses').innerHTML += `<div class="request"><div class="author">user:</div><div class="message">${input.value}</div></div><div class="response"><div class="author">${currentModel.split(':')[0]}:</div><div class="message">${markdown}</div></div>`;
 		send.value = 'send';
 		send.disabled = false;
 		input.readOnly = false;

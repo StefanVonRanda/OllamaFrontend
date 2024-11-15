@@ -52,7 +52,6 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
 	height: 100dvh;
 	background: var(--background) radial-gradient(closest-side, var(--primary) 0.1%, var(--background) 99.9%) no-repeat 0 -125vh;
 	background-size: 100% 200%;
@@ -101,8 +100,12 @@ body {
 	border-radius: 0.25rem;
 	padding: 0.5rem 0.75rem;
 	width: fit-content;
-	max-width: 60ch;
 	backdrop-filter: blur(4px);
+
+	p, li {
+		max-width: 60ch;
+		margin-bottom: 0.5em;
+	}
 }
 
 .request .author {
@@ -133,11 +136,11 @@ body {
 	display: flex;
 	padding-inline: 0 .25rem;
 	width: min(60rem, 100%);
-	margin-inline: auto;
-	margin-bottom: 1rem;
+	margin: 1rem auto;
 	border-radius: 0.5rem;
 	background: var(--cover);
 	backdrop-filter: blur(4px);
+	box-shadow: 0 -1rem 1rem 0.5rem var(--background);
 }
 
 .user input[type="text"] {
@@ -145,6 +148,7 @@ body {
 	background: var(--cover);
 	border: unset;
 	padding: 0.5rem;
+	font-size: 0.875rem;
 
 	&:focus-within {
 		outline: unset;
@@ -155,15 +159,17 @@ body {
 	display: flex;
 	align-items: center;
 	border-radius: 0.125rem;
+	background: var(--primary);
+	border-radius: 0.25rem;
+	margin-block: 0.25rem;
 }
 
 .user input[type="submit"] {
 	appearance: none;
 	font-family: 'icon';
-	background: var(--primary);
 	border: unset;
 	font-size: 1.25rem;
-	border-radius: 0 0.25rem 0.25rem 0;
+	background: unset;
 }
 
 .user input[type="submit"]:disabled {
@@ -184,17 +190,17 @@ body {
 	inset: 0;
 	display: grid;
 	place-items: center;
-	background: var(--primary);
+	background: var(--cover);
+	outline: 1px solid var(--color);
 	color: #fff;
-	font-size: 1.25rem;
-	border-radius: 0.125rem;
+	font-size: 1.125rem;
 	line-height: 0;
 	pointer-events: none;
-	border-radius: 0.25rem 0 0 0.25rem;
+	border-radius: 0.25rem;
 }
 
 .models select {
-	max-width: 2.5rem;
+	max-width: 2rem;
 }
 
 @keyframes loading {
