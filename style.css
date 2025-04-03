@@ -73,7 +73,7 @@ body {
 	flex-grow: 1;
 	overflow-y: auto;
 	position: relative;
-	width: min(60ch, 95%);
+	width: min(65ch, 95%);
 	margin-inline: auto;
 
 	&:empty::after {

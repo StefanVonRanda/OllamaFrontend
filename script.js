@@ -80,22 +80,29 @@ send.onclick = async () => {
 	};
 
 	// --- Create UI Elements for Request and Response ---
-	const requestDiv = document.createElement('div');
-	requestDiv.className = 'request';
-	requestDiv.innerHTML = `<div class="author">user:</div><div class="message">${escapeHTML(userMessage)}</div>`;
-	responsesContainer.appendChild(requestDiv);
+	const modelName = currentModel.split(':')[0]; // Get clean model name once
 
-	const responseDiv = document.createElement('div');
-	responseDiv.className = 'response';
-	const responseAuthorDiv = document.createElement('div');
-	responseAuthorDiv.className = 'author';
-	responseAuthorDiv.textContent = `${currentModel.split(':')[0]}:`;
-	const responseMessageDiv = document.createElement('div');
-	responseMessageDiv.className = 'message';
-	responseMessageDiv.innerHTML = '▋';
-	responseDiv.appendChild(responseAuthorDiv);
-	responseDiv.appendChild(responseMessageDiv);
-	responsesContainer.appendChild(responseDiv);
+	// Add Request HTML using template literal
+	responsesContainer.insertAdjacentHTML('beforeend', `
+		<div class="request">
+				<div class="author">user:</div>
+				<div class="message">${escapeHTML(userMessage)}</div>
+		</div>
+`);
+
+	// Add Response structure HTML using template literal
+	responsesContainer.insertAdjacentHTML('beforeend', `
+		<div class="response">
+				<div class="author">${escapeHTML(modelName)}:</div>
+				<div class="message">|</div>
+		</div>
+`);
+
+	// Get a reference to the message element *of the last added response*
+	// This is crucial for updating during streaming
+	const responseMessageDiv = responsesContainer.querySelector('.response:last-child .message');
+
+	// Scroll to bottom
 	responsesContainer.scrollTop = responsesContainer.scrollHeight;
 
 	// --- Clear Input ---
