@@ -27,7 +27,7 @@ bun run start
 
 #### ToDo
 
-- Handle Streaming data output
-- Format markdown output
+- ~~Handle Streaming data output~~
+- ~~Format markdown output~~
 - Make it easy to manage models in GUI
 - Convert this whole thing to a Tauri App IDK
